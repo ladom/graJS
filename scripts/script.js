@@ -26,13 +26,13 @@ var finalScoreComputer = computer.score;
 newGameBtn.addEventListener('click', newGame);
 
 pickRock.addEventListener('click', function() {
-	playerPick('rock')
+	playerPick('Kamień')
 });
 pickPaper.addEventListener('click', function() {
-	playerPick('paper')
+	playerPick('Papier')
 });
 pickScissors.addEventListener('click', function() {
-	playerPick('scissors')
+	playerPick('Nożyczki')
 });
 
 function setGameElements() {
@@ -71,7 +71,7 @@ function playerPick(playerPick) {
 }
 
 function getComputerPick() {
-	var possiblePicks = ['rock', 'paper', 'scissors'];
+	var possiblePicks = ['Kamień', 'Papier', 'Nożyczki'];
 	return possiblePicks[Math.floor(Math.random()*3)];
 }
 
@@ -92,9 +92,9 @@ function checkRoundWinner(playerPick, computerPick) {
 	if (playerPick == computerPick) {
 		winnerIs = 'noone';
 	} else if (
-		(computerPick == 'rock' && playerPick == 'scissors') ||
-		(computerPick == 'scissors' && playerPick == 'paper') ||
-		(computerPick == 'paper' && playerPick == 'rock')) {
+		(computerPick == 'Kamień' && playerPick == 'Nożyczki') ||
+		(computerPick == 'Nożyczki' && playerPick == 'Papier') ||
+		(computerPick == 'Papier' && playerPick == 'Kamień')) {
 		
 		winnerIs = 'computer';
 	}
